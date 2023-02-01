@@ -3,18 +3,19 @@ using NUnit.Framework;
 
 namespace LeetCodeTests;
 
-public class ContainsDuplicateTests
+public class ContainsDuplicateIITests
 {
     [Test]
     public void Test1()
     {
         // Arrange
-        int[] prices = { 1, 2, 3, 1 };
+        int[] nums = { 1, 2, 3, 1 };
+        int k = 3;
 
         bool expected = true;
 
         // Act
-        var result = ContainsDuplicate.ContainsDuplicateX(prices);
+        var result = ContainsDuplicateII.ContainsNearbyDuplicate(nums, k);
 
         // Assert
         Assert.That(result, Is.EqualTo(expected));
@@ -24,12 +25,13 @@ public class ContainsDuplicateTests
     public void Test2()
     {
         // Arrange
-        int[] prices = { 1, 2, 3, 4 };
+        int[] nums = { 1, 0, 1, 1 };
+        int k = 1;
 
-        bool expected = false;
+        bool expected = true;
 
         // Act
-        var result = ContainsDuplicate.ContainsDuplicateX(prices);
+        var result = ContainsDuplicateII.ContainsNearbyDuplicate(nums, k);
 
         // Assert
         Assert.That(result, Is.EqualTo(expected));
@@ -39,12 +41,13 @@ public class ContainsDuplicateTests
     public void Test3()
     {
         // Arrange
-        int[] prices = { 1, 1, 1, 3, 3, 4, 3, 2, 4, 2 };
+        int[] nums = { 1, 2, 3, 1, 2, 3 };
+        int k = 2;
 
-        bool expected = true;
+        bool expected = false;
 
         // Act
-        var result = ContainsDuplicate.ContainsDuplicateX(prices);
+        var result = ContainsDuplicateII.ContainsNearbyDuplicate(nums, k);
 
         // Assert
         Assert.That(result, Is.EqualTo(expected));
